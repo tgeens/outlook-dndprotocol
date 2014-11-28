@@ -83,10 +83,18 @@ Once you get the byte stream of "RenPrivateMessages", it can be read using the f
   <tr>
     <td>4 Bytes</td><td>??</td><td>Unknown, seems to be always E0 80 E9 5A</td>
   </tr>
+  
   <tr>
-    <td>Outlook 2013: 24 Bytes<br />Outlook 2010: 20 bytes<br />Outlook 2007: 16 bytes</td>
+    <td>4 Bytes</td><td>int</td><td>Length of unknown property - usually 00-00-00-00</td>
+  </tr>
+  <tr>
+   <td>Length given by previous value</td><td>binary</td><td>Length given by previous value</td>
+  </tr>
+  
+  <tr>
+    <td>Outlook 2013: 20 Bytes<br />Outlook 2010: 16 bytes<br />Outlook 2007: 12 bytes</td>
     <td>??</td>
-    <td>Apparently all 0-bytes, but the 5th:<br />O2013: 5th byte is 0x08 or 0x09<br />O2010: 5th byte is 0x18 or 0x08<br />O2007: 5th byte is always 0x01</td>
+    <td>Most of the time all 0-bytes, but the 1st:<br />O2013: 1st byte is often 0x08 or 0x09<br />O2010: 1st byte is often 0x18 or 0x08<br />O2007: 1st byte is often 0x01</td>
   </tr>
   <tr>
     <td>Next item </td><td>---</td><td>---</td>
